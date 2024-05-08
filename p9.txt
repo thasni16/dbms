@@ -64,7 +64,7 @@ open rent_cur;
 dbms_output.put_line('Id  '||'Name  '||'Days  '||'HotelId  '||'Rate');
 loop
 fetch rent_cur into id,name,days,hid,rate;
-exit when rent_cur % notfound;
+exit when rent_cur %notfound;
 amt:=0;
 amt:=rate*days;
 dbms_output.put_line(id||' '||name||' '||days||' '||hid||' '||amt);
@@ -84,7 +84,7 @@ PL/SQL procedure successfully completed.
 b)
 set serveroutput on
 declare 
-cursor hdetails is select hotelid,name,no_of_rooms,rate_day from hotel2 where rate_day>500;
+cursor hdetails is select * from hotel2 where rate_day>500;
 id hotel2.hotelid % type;
 name hotel2.name % type;
 room hotel2.no_of_rooms % type;
